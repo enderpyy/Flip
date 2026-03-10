@@ -35,13 +35,16 @@ void playFlip()
     deck main_deck;
     cout << "Main Deck Created\n";
     cout << main_deck;
+    cout << endl;
 
     // shuffle the main deck 3 times as required
-    main_deck.shuffle();
-    main_deck.shuffle();
-    main_deck.shuffle();
+    for (int i = 0; i < 3; i++) {
+        main_deck.shuffle();
+        cout << endl;
+    }
+    
 
-    cout << "Main Deck Shuffled\n";
+    cout << "\nMain Deck Shuffled\n";
     cout << main_deck;
 
     deck hand_deck(false); // make empty hand deck
@@ -53,16 +56,16 @@ void playFlip()
         hand_deck.replace(main_deck.deal());
     }
 
-
-    cout << "Current Hand Deck\n";
+    //check for success
+    cout << "\nCurrent Hand Deck\n";
     cout << hand_deck;
 
-    cout << "Remaining Main Deck\n";
+    cout << "\nRemaining Main Deck\n";
     cout << main_deck;
 
 
     // newly added section to fulfill the interactive flip game shown in part a
-    cout << "Welcome to Flip game Let's Start!\n";
+    cout << "\nWelcome to Flip game Let's Start!\n";
 
     int score = 0;
     int numberOfFlips = 0;
